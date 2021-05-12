@@ -11,6 +11,7 @@
 # DFerenczy,5.10.2021,Added Processing code using objFile, strData, dicRow and lstTable variables
 # DFerenczy,5.10.2021,Added Input / Output code
 # DFerenczy,5.11.2021,Added error handling to option 3
+# DFerenczy,5.11.2021,Added print statements to step 4 and 5
 # ------------------------------------------------------------------------ #
 
 # -- Data -- #
@@ -57,6 +58,7 @@ while (True):
         strPriority = input("Enter a Priority to Add: ")
         dicRow = {"Task":strTask, "Priority":strPriority}
         lstTable.append(dicRow)
+        print(strTask, "was added successfully")
         continue
     # Step 5 - Remove a new item from the list/Table
     elif (strChoice.strip() == '3'):
@@ -70,9 +72,9 @@ while (True):
                 lstTable.remove(dicRow)
                 boolRemoved = True
         if not boolRemoved:
-            print(strRemoveTask, "was not found\n")
+            print(strRemoveTask, "was not found")
         if boolRemoved:
-            print(strTask, "was successfully removed\n")
+            print(strTask, "was successfully removed")
         continue
     # Step 6 - Save tasks to the ToDoToDoList.txt file
     elif (strChoice.strip() == '4'):
@@ -83,6 +85,7 @@ while (True):
             dicRow = f'{strTask},{strPriority}\n'
             txtFile.write(dicRow)
         txtFile.close()
+        print("Save Successful!")
         continue
     # Step 7 - Exit program
     elif (strChoice.strip() == '5'):
